@@ -1,0 +1,20 @@
+---
+description:
+  short: Square flags in natural colours without outlines.
+  full: |
+    These flags and pennants are recommended for use in the US and elsewhere
+    where square letter flags are used.
+    The flags do not have outlines so should not be used on a white background.
+
+    Colours and designs have been selected to be similar to 'real' flags and
+    pennants in common use.
+
+license:
+  spdx: Unlicense
+  file: 010-LICENSE
+  link: https://unlicense.org/
+
+options:
+  viewBox:
+    default: [180, 180]
+    swallowtail: [180, 180]

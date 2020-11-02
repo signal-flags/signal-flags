@@ -1,0 +1,18 @@
+# .eslintignore
+
+/node_modules/
+
+/tmp/
+
+# Development for signal-flags NPM module
+/signal-flags/
+
+# Development for https://signal-flags.github.io
+/signal-flags-website/
+
+# Target for deployment of https://signal-flags.github.io
+/signal-flags.github.io/
+
+# Generated image files
+/signal-flag-images-svg/
+/signal-flag-images-png/

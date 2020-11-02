@@ -1,0 +1,22 @@
+{
+  "name": "signal-flags",
+  "version": "1.1.0",
+  "description": "The home repository for the open source signal flags project.",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "build:images": "node bin/build-images"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
+    "js-yaml": "^3.14.0",
+    "prettier": "^2.0.5"
+  }
+}

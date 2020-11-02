@@ -1,0 +1,21 @@
+---
+description:
+  short: Rectangular (4x3) flags in primary colours without outlines.
+  full: |
+    These flags and pennants are recommended for use in the US and elsewhere
+    where square letter flags are used.
+    The flags do not have outlines so should not be used on a white background.
+
+    Flags are displayed in primary colours rather than the more natural
+    default shades.
+
+license:
+  spdx: Unlicense
+  file: 010-LICENSE
+  link: https://unlicense.org/
+
+options:
+  colors: primary
+  viewBox:
+    default: [180, 180]
+    swallowtail: [180, 180]

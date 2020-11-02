@@ -1,0 +1,19 @@
+---
+description:
+  short: Rectangular (4x3) flags in natural colours with outlines.
+  full: |
+    These flags and pennants are recommended for use internationally where
+    rectangular letter flags are more familiar than square.
+    All flags and pennants have outlines so they are suitable for display or
+    printing on a white background.
+
+    Colours and designs have been selected to be similar to 'real' flags and
+    pennants in common use.
+
+license:
+  spdx: Unlicense
+  file: 010-LICENSE
+  link: https://unlicense.org/
+
+options:
+  outline: true

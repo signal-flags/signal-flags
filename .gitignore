@@ -1,0 +1,23 @@
+# .gitignore
+
+/node_modules/
+
+/tmp/
+
+# Generated images.
+signal-flag-images
+
+# `signal-flags` node module.
+signal-flags-js
+
+# `signal-flags/signal-flags` Composer module for PHP.
+signal-flags-php
+
+# WordPress plugin.
+signal-flags-wp
+
+# Source for https://signal-flags.github.io.
+signal-flags-website
+
+# Deployment of https://signal-flags.github.io.
+signal-flags.github.io

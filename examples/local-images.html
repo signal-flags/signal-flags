@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Using images - local</title>
+
+<style>
+  body {
+    font-size: 12px;
+  }
+.svgl svg { vertical-align: bottom; }
+
+.flag-1 .svgl svg, .flag-1.svgl svg, .flag-1 img.flag, img.flag-1.svgl { height: 1em; }
+.flag-2 .svgl svg, .flag-2.svgl svg { height: 1.2em; }
+.flag-xxs .svgl svg, .flag-xxs.svgl svg { height: 18px; }
+.flag-xs .svgl svg, .flag-xs.svgl svg { height: 24px; }
+.flag-sm .svgl svg, .flag-sm.svgl svg, .flag-sm img.flag, img.flag-sm.svgl { height: 32px; }
+.flag-lg .svgl svg, .flag-lg.svgl svg { height: 72px; }
+.flag-xl .svgl svg, .flag-xl.svgl svg { height: 120px; }
+.flag-xxl .svgl svg, .flag-xxl.svgl svg { height: 192px; }
+.flag-xxxl .svgl svg, .flag-xxxl.svgl svg { height: 300px; }
+
+.flag-md .svgl svg, .flag-md.svgl svg { height: 48px; }
+.flag-fw .flag-md .svgl svg,
+.flag-md .flag-fw .svgl svg,
+.flag-md.flag-fw .svgl svg,
+.flag-md .flag-fw.svgl svg,
+.flag-fw .flag-md.svgl svg { height: auto; width: 48px; }
+</style>
+</head>
+
+<body>
+  <div>
+    Here is a flag <img class="svgl flag-1" name="a"/>
+  </div>
+  <div>
+    Here is a flag <i class="svgl flag-1">a</i>
+  </div>
+  
+<div class="flag-1">
+<h1>Here is a flag <i class="svgl">a</i></h1>
+<div>
+  Here is a flag <img class="svgl flag-sm" name="a"/>
+</div>
+<div>
+  Here is a flag <i class="svgl flag-sm">a</i>
+</div>
+<div class="flag-xs">ap</div>
+<div>
+  Here is a flag <i class="svgl">b</i>
+</div>
+<div>
+  Here is a flag <i class="svgl">c</i>
+</div>
+<div>
+  Here is a flag <i class="svgl">d</i>
+</div>
+</div>  
+
+
+<table class="svgl-md flag-fw">
+  <tr>
+    <td><i class="svgl">c</i></td>
+  </tr>
+  <tr>
+    <td><i class="svgl">n1</i></td>
+  </tr>
+</table>
+
+
+<table style="border-collapse: collapse;" class="svgl-md">
+  <caption>Superheros and sidekicks</caption>
+  <colgroup>
+      <col>
+      <col style="background: #ddd;">
+      <col class="shaded">
+      <col class="flash">
+      <col class="flash">
+  </colgroup>
+  <tr>
+      <td> </td>
+      <th scope="col">Batman</th>
+      <th scope="col">Robin</th>
+      <th scope="col">The Flash</th>
+      <th scope="col">Kid Flash</th>
+  </tr>
+  <tr>
+      <th scope="row">A</th>
+      <td class="svgl flag-fw">a</td>
+      <td><img class="svgl" src="../../signal-flag-images/images/00-rect-natural-outline/z.svg"/></td>
+      <td class="svgl" data-flag-set="1">a</td>
+      <td class="svgl">a</td>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td class="svgl flag-fw">n1</td>
+    <td class="svgl flag-fw">n1</td>
+    <td class="svgl">n1</td>
+    <td class="svgl">n1</td>
+</tr>
+<tr>
+  <th scope="row">1</th>
+  <td class="svgl">a</td>
+  <td class="svgl">n1</td>
+  <td class="svgl">n1</td>
+  <td class="svgl">n1</td>
+</tr>
+</table>
+
+<script>
+
+SvgLoad = $ = [];
+
+$.add = (imageFile) => {
+  $.push(imageFile);
+};
+
+$.get = (flag, set) => {
+  try {
+    return $[set || 0]['svg'][flag];
+  } catch (e) {
+  }
+};
+
+$.config = {
+  cls: 'svgl',
+};
+
+$.auto = () => {
+  document.querySelectorAll(`.${$.config.cls}`).forEach((el) => {
+    if (el.nodeName === 'IMG' && el.name) {
+      const svg = SvgLoad.get(el.name, el.dataset && el.dataset.flagSet || 0).replace('<svg', '<?xml version="1.0" encoding="UTF-8" ?>\n<svg xmlns="http://www.w3.org/2000/svg"');
+      el.src = `data:image/svg+xml;utf8,${svg}`;
+      el.alt = el.alt || `Flag ${el.name}`;
+      return;
+    }
+    el.innerHTML = SvgLoad.get(el.innerHTML, el.dataset && el.dataset.flagSet || 0);
+  });
+}
+
+</script>
+
+<script src="../../signal-flag-images/images/00-rect-natural-outline/110-svg.js"></script>
+<script src="../../signal-flag-images/images/01-rect-natural-no/110-svg.js"></script>
+
+<script>
+
+SvgLoad.auto();
+console.log(SvgLoad[0].meta)
+</script>
+</body>
+</html>
